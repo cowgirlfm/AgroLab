@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color:#83A660;
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.novedades-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+.noticia {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.noticia:hover {
+  transform: scale(1.03);
+}
+
+.bolsa {
+  background-image: url('bolsa-novedades.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  aspect-ratio: 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+  width: 90%;
+}
+
+.bolsa img {
+  width: 50%;
+  height: 30%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.bolsa .titulo {
+  position: absolute;
+  bottom: 10px;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 0.2rem 0.4rem;
+}
+
+
+.noticia:hover .titulo {
+  opacity: 1;
+}
+
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup-content {
+  background-color:#83A660;
+  max-width: 90%;
+  max-height: 90%;
+  width: 600px;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.popup-content .close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: black;
+  background-color: transparent;
+  border: none;
+}
+
+.popup-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 900px) {
+  .novedades-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .novedades-grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .popup-content {
+    max-height: 80%;
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+.bolsa.flip-container {
+  perspective: 1000px;
+  padding: 0;
+  position: relative;
+}
+
+.bolsa.flip-container:hover .card {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+}
+
+.front img {
+  width: 60%;
+  height: 40%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.back {
+  transform: rotateY(180deg);
+  background-color:#83A660;
+}
+
+.titulo-flip {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+  text-align: center;
+  padding: 1rem;
+}
+
+.grupo-img {
+  width: 220px;
+  height: auto;
+  margin-bottom: -60px;
+  z-index: 2;
+  position: relative;
+  left: 10px;
+}
+
+.popup-content::-webkit-scrollbar {
+  width: 12px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: #83A660;
+  border-radius: 8px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background-color: #107329;
+  border-radius: 8px;
+  border: 2px solid #83A660;
+}
+
+.popup-content .close {
+  top: 0.2rem;
+  right: 1.2rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.popup-content img {
+ max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  border-radius: 8px;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.back-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover img {
+  transform: scale(1.1);
+}

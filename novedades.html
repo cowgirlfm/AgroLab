@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <title>AgroLab</title>
+  <link rel="stylesheet" href="novedades.css">
+</head>
+
+<body>
+  <a href="menu.html" class="back-button">
+    <img src="hoja.png" alt="Volver al menú" />
+  </a>
+
+<div class="novedades-grid">
+  
+  <div class="noticia" onclick="openPopup('La Semana AgroLab 2023 es un evento que busca generar conversaciones interdisciplinares y diálogos de saberes en torno al alimento, sus posibilidades y relaciones desde la siembra hasta la mesa. Este año será la primera versión del único espacio de la universidad en el que se abordan los sistemas alimentarios desde esta perspectiva holística. A partir del alimento podemos abordar asuntos de: agricultura, tecnología, energía, memoria y territorio, economía, gastronomía, diseño, arquitectura, urbanismo, ecología, derecho, gobernanza y muchos más. Nos proponemos poner atención, no solo a estos aspectos aislados, sino sobre todo a sus intersecciones.', 'novedades1.png')">
+    <img class="grupo-img" src="1-grupo.png" alt="Grupo 1">
+    <div class="bolsa flip-container">
+      <div class="card">
+        <div class="front">
+          <img src="novedades1.png" alt="Noticia 1">
+        </div>
+        <div class="back">
+          <div class="titulo-flip">Semana AgroLab</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noticia" onclick="openPopup('Nuestro equipo participara en esta iniciativa de la Universidad de Wageningen. El reto es: We challenge you to develop an urban farming site that significantly improves the quality of life of local residents in one of the most diverse lower-income neighborhoods of Washington D.C', 'novedades2.png')">
+    <img class="grupo-img" src="2-grupo.png" alt="Grupo 2">
+    <div class="bolsa flip-container">
+      <div class="card">
+        <div class="front">
+          <img src="novedades2.png" alt="Noticia 2">
+        </div>
+        <div class="back">
+          <div class="titulo-flip">Urban Greenhouse Challenge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noticia" onclick="openPopup('1. Método tradicional: Se trata de la siembra en materas. La persona debe estar pendiente día a día del riego y el cuidado del cultivo.   2. Hidroponía: Con canales que permiten la acumulación de agua se adelanta un riego programado, que le da al cultivo de plantas soluciones minerales sin el uso de tierra. Así se garantiza que no aparezcan insectos ni plagas.   3. Acuaponía: En esta técnica se utilizan sensores que permiten la recirculación y oxigenación del agua. También se incluyen peces que generan nitritos/nitratos para alimentar las plantas, que luego purifican el agua y devuelven la energía a los peces. Este método permite el ahorro del 90% de los recursos hídricos.   4. Farmbot: Se trata de una máquina de agricultura robotizada con rieles y automatizaciones para la siembra. Permite el control de malezas, riego de agua automático, informe de los cultivos que ya se pueden cosechar y una menor intervención del ser humano. Aunque estos son métodos conocidos, en Los Andes se busca darle una mirada desde distintas disciplinas para conocer sus implicaciones. Por eso, a través del diseño se distribuyó el espacio de las huertas de tal manera que cualquier profesional pueda interactuar y aportar nuevos conocimientos.', 'novedades3.jpg')">
+    <img class="grupo-img" src="3-grupo.png" alt="Grupo 3">
+    <div class="bolsa flip-container">
+      <div class="card">
+        <div class="front">
+          <img src="novedades3.jpg" alt="Noticia 3">
+        </div>
+        <div class="back">
+          <div class="titulo-flip">Alternativas para cultivar en la ciudad</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noticia" onclick="openPopup('Te invitamos a conocer un poco más de nuestra variedad de talleres diseñados para conectar con la naturaleza, entendiendo el impacto que puede tener en nuestra cotidianidad y en nuestras dinámicas alimentarias en las ciudades.', 'novedades4.jpg')">
+    <img class="grupo-img" src="4-grupo.png" alt="Grupo 4">
+    <div class="bolsa flip-container">
+      <div class="card">
+        <div class="front">
+          <img src="novedades4.jpg" alt="Noticia 4">
+        </div>
+        <div class="back">
+          <div class="titulo-flip">Acuaponía creativa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noticia" onclick="openPopup('Te invitamos a conocer un poco más de nuestra variedad de talleres diseñados para conectar con la naturaleza, entendiendo el impacto que puede tener en nuestra cotidianidad y en nuestras dinámicas alimentarias en las ciudades.', 'novedades5.jpg')">
+    <img class="grupo-img" src="5-grupo.png" alt="Grupo 5">
+    <div class="bolsa flip-container">
+      <div class="card">
+        <div class="front">
+          <img src="novedades5.jpg" alt="Sabores florales">
+        </div>
+        <div class="back">
+          <div class="titulo-flip">Sabores florales</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="noticia" onclick="openPopup('Te invitamos a conocer un poco más de nuestra variedad de talleres diseñados para conectar con la naturaleza, entendiendo el impacto que puede tener en nuestra cotidianidad y en nuestras dinámicas alimentarias en las ciudades.', 'novedades6.jpg')">
+    <img class="grupo-img" src="6-grupo.png" alt="Grupo 6">
+    <div class="bolsa flip-container">
+      <div class="card">
+        <div class="front">
+          <img src="novedades6.jpg" alt="Noticia 6">
+        </div>
+        <div class="back">
+          <div class="titulo-flip">Los sentidos del agua</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <img id="popup-img" src="" alt="Imagen de la noticia" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+    <p id="popup-text"></p>
+  </div>
+</div>
+<script type="module" src="novedades.js"></script>
+</body>
+</html>    
+

@@ -1,0 +1,147 @@
+body {
+    margin: 0;
+    background-color: #EAF2CE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .menu-container {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    max-width: 700px;
+    max-height: 700px;
+  }
+  
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 350px;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+  
+  .branch {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    animation: pulse 2s infinite ease-in-out;
+    cursor: pointer;
+  }
+
+.branch2, .branch3 {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .svg-branch {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .hoja {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+  }
+  
+  .branch1 .hoja {
+    width: 21%;
+    top: 205%;
+    left: 63%;
+  }
+  
+  .branch2 .hoja {
+    width: 10%;
+    top: 60%;
+    left: 45%;
+  }
+  
+  .branch3 .hoja {
+    width: 10%;
+    top: 15%;
+    left: 60%; 
+  }
+  
+  .branch4 .hoja {
+    width: 21%;
+    left: 68%;
+    top: 31%;
+  }  
+  
+  .branch:hover .hoja {
+    opacity: 1;
+  }
+  
+.branch1 { 
+    top: 60%; 
+    left: 45%; 
+    transform: translateX(-50%) rotate(-20deg); 
+  }
+  
+  .branch2 { 
+    top: 40%; 
+    left: 7%; 
+    transform: translateY(-50%) rotate(20deg); 
+  }
+  
+  .branch3 { 
+    bottom: 34%; 
+    left: 72%; 
+    transform: translateX(-50%) rotate(20deg); 
+  }
+  
+  .branch4 { 
+    top: 10%; 
+    left: 45%; 
+    transform: translateY(-50%) rotate(-20deg); 
+  }  
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+.label {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s;
+  color: #2e7d32;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.branch:hover .label {
+  opacity: 1;
+}
+
+.branch1 .label {
+  top: 250%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.branch2 .label {
+  top: 80%;
+  left: 60%;
+}
+
+.branch3 .label {
+  top: -20%;
+  left: 70%;
+}
+
+.branch4 .label {
+  top: 50%;
+  left: 100%;
+}

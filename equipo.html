@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <title>AgroLab</title>
+  <link rel="stylesheet" href="equipo.css">
+</head>
+
+<body>
+    <a href="menu.html" class="back-button">
+        <img src="hoja.png" alt="Volver al menú" />
+    </a>
+    
+    <div class="titulo-equipo" id="titulo-equipo">¿Quienes somos?</div>
+    <div class="contenedor">
+        <div class="tierra">
+            <img src="tierra1.png" alt="tierra con lombrices">
+            <img src="lombriz-1.png" class="lombriz" data-id="1" alt="Freddy Zapata">
+            <img src="lombriz-2.png" class="lombriz" data-id="2" alt="Giacomo Barbieri">
+            <img src="lombriz-3.png" class="lombriz" data-id="3" alt="Antonia Roda">
+            <img src="lombriz-4.png" class="lombriz" data-id="4" alt="Daniel Avendaño">
+            <img src="lombriz-5.png" class="lombriz" data-id="5" alt="Ana Lucia Martínez">
+            <img src="lombriz-6.png" class="lombriz" data-id="6" alt="Edison Reyes">
+        </div>
+    </div>
+    
+     <div class="popup" id="equipo-popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <img id="popup-img" src="" alt="">
+            <div id="popup-text"></div>
+        </div>
+    </div>
+    <script type="module" src="equipo.js"></script>
+</body>

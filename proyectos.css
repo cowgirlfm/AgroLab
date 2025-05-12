@@ -1,0 +1,129 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'IBM Plex Mono', monospace;
+}
+
+.interface {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: #83A660;
+  background-image: url("proyectos.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow: hidden;
+}
+
+.background-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100vw;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  z-index: -1;
+}
+
+.titulo {
+  position: absolute;
+  color: white;
+  font-size: 1.5vw;
+  background-color: rgba(0,0,0,0.5);
+  padding: 0.5vw 1vw;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s;
+  white-space: nowrap;
+}
+
+.titulo:hover {
+  transform: scale(1.05);
+  background-color: rgba(255,255,255,0.2);
+}
+
+#terminados {
+  top: 8%;
+  left: 53%;
+  transform: rotate(-3deg);
+}
+
+#en-proceso {
+  top: 28%;
+  left: 39%;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.popup.show {
+  display: flex;
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+}
+
+.popup .close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.popup-content a {
+  display: inline-block;
+  margin-top: 12px;
+  color:#107329;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.popup-content a:hover {
+  color: #0B8C38;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.back-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover img {
+  transform: scale(1.1);
+}

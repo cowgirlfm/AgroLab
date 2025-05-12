@@ -1,0 +1,128 @@
+body {
+    background-color: #83A660;
+}
+
+.titulo-equipo {
+  position: fixed;
+  top: 55px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #F2E530;
+  z-index: 20;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.lombriz {
+  position: absolute;
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.3s ease; 
+}
+
+.lombriz:hover {
+  transform: translateY(-8px) scale(1.1); 
+}
+
+.tierra > img:first-child {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.lombriz:nth-child(2) { top: 25%; left: 10%; }
+.lombriz:nth-child(3) { top: 40%; left: 25%; }
+.lombriz:nth-child(4) { top: 60%; left: 30%; }
+.lombriz:nth-child(5) { top: 55%; left: 45%; }
+.lombriz:nth-child(6) { top: 45%; left: 80%; }
+.lombriz:nth-child(7) { top: 35%; left: 60%; }
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #83A660;
+  border: 2px solid #107329;
+  padding: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+.popup.show {
+  display: block;
+}
+
+.popup-content {
+  background-color: #83A660;
+  font-family: "IBM Plex Mono", monospace;
+  position: relative;
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#popup-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 2px solid #107329;
+}
+
+#popup-text h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  display: block;
+  width: 48px;
+  height: 48px;
+}
+
+.back-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover img {
+  transform: scale(1.1);
+}
+

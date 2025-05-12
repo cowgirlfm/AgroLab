@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png"/>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <title>AgroLab</title>
+  <link rel="stylesheet" href="proyectos.css">
+</head>
+
+<body>
+    <a href="menu.html" class="back-button">
+        <img src="hoja.png" alt="Volver al menú" />
+    </a>
+    <div class="interface">
+        <div class="image-wrapper">
+            <div class="titulo compartimiento" id="terminados">Proyectos terminados</div>
+            <div class="titulo compartimiento" id="en-proceso">& en proceso</div>
+        </div>
+    </div>
+
+
+    <div class="popup" id="custom-popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <div id="popup-text"></div>
+        </div>
+    </div>
+    <script type="module" src="proyectos.js"></script>
+</body>
