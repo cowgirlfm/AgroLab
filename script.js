@@ -4,7 +4,7 @@ const container = document.getElementById('introContainer');
 
 const esCelular = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
-source.src = esCelular ? '/animacion-celular.mp4' : '/animacion.mp4';
+source.src = esCelular ? '/animación-celular.mp4' : '/animacion.mp4';
 video.load();
 
 video.oncanplay = () => {
