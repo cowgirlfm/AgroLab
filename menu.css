@@ -147,29 +147,54 @@ body {
 }
 
 @media (max-width: 768px) {
-  .menu-container {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-  }
+ .menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1.5rem;
+  position: relative;
+}
 
-  .logo {
-    width: 30vw; /* más pequeño */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    z-index: 2;
-  }
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+}
 
-  .branch {
-    width: 15vw;
-    height: auto;
-    position: absolute;
-    animation: none;
-    z-index: 1;
-  }
+.middle {
+  justify-content: space-around;
+}
 
+.logo {
+  width: 30vw;
+  max-width: 150px;
+  height: auto;
+  z-index: 2;
+  position: relative;
+}
+
+.branch {
+  width: 15vw;
+  max-width: 80px;
+  height: auto;
+  position: relative;
+  animation: none;
+  transform: none !important;
+}
+
+.label {
+  font-size: 10px;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
   .branch1 {
     top: calc(50% - 30vw); /* arriba */
     left: 50%;
@@ -194,12 +219,3 @@ body {
     transform: translate(-50%, -50%) rotate(180deg);
   }
 }
-  .label {
-    font-size: 10px;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    text-align: center;
-    width: 100%;
-  }
