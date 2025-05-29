@@ -147,75 +147,67 @@ body {
 }
 
 @media (max-width: 768px) {
- .menu-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  gap: 1.5rem;
-  position: relative;
-}
+  .menu-container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
 
-.row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  gap: 1rem;
-}
-
-.middle {
-  justify-content: space-around;
-}
-
-.logo {
-  width: 30vw;
-  max-width: 150px;
-  height: auto;
-  z-index: 2;
-  position: relative;
-}
-
-.branch {
-  width: 15vw;
-  max-width: 80px;
-  height: auto;
-  position: relative;
-  animation: none;
-  transform: none !important;
-}
-
-.label {
-  font-size: 10px;
-  top: 120%;
-  left: 50%;
-  transform: translateX(-50%);
-  position: absolute;
-  text-align: center;
-  width: 100%;
-}
-  .branch1 {
-    top: calc(50% - 30vw); /* arriba */
+  .logo {
+    width: 30vw;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 2;
+  }
+
+  .branch {
+    width: 15vw;
+    height: auto;
+    position: absolute;
+    animation: none;
+    z-index: 1;
+  }
+
+  .branch1 {
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   .branch2 {
     top: 50%;
-    left: calc(50% - 30vw); /* izquierda */
-    transform: translate(-50%, -50%) rotate(90deg);
+    left: 20%;
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .branch3 {
     top: 50%;
-    left: calc(50% + 30vw); /* derecha */
-    transform: translate(-50%, -50%) rotate(270deg);
+    left: 80%;
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .branch4 {
-    top: calc(50% + 30vw); /* abajo */
+    top: 80%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(180deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  .label {
+    font-size: 10px;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+  }
+
+  .hoja {
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
