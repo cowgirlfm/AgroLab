@@ -12,22 +12,22 @@ const integrantes = {
   3: {
     nombre: "Antonia Roda",
     info: `<p><strong>Egresada</strong><br>Antropología</p>`,
-    imagen: "antonia-roda.jpg"
+    imagen: "antonia-roda.png"
   },
   4: {
     nombre: "Daniel Avendaño",
     info: `<p><strong>Egresado</strong><br>Ingeniería Mecánica</p>`,
-    imagen: "daniel-avendano.jpg"
+    imagen: "daniel-avendano.png"
   },
   5: {
     nombre: "Ana Lucia Martínez",
     info: `<p><strong>Egresada</strong><br>Biología</p>`,
-    imagen: "ana-lucia.jpg"
+    imagen: "ana-lucia.png"
   },
   6: {
     nombre: "Edison Reyes",
     info: `<p><strong>Egresado</strong><br>Ingeniería Química</p>`,
-    imagen: "edison-reyes.jpg"
+    imagen: "edison-reyes.png"
   }
 };
 
