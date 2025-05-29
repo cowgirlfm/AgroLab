@@ -150,69 +150,45 @@ body {
   .menu-container {
     width: 100vw;
     height: 100vh;
-    max-width: none;
-    max-height: none;
   }
 
   .logo {
-    width: 55vw;
+    width: 35vw; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .branch {
-    width: 60px;
-    height: 60px;
+    width: 50px; 
+    height: 50px;
     animation: none;
   }
 
-  .branch2, .branch3 {
-    width: 100px;
-    height: 100px;
-  }
-
   .branch1 {
-    top: 80%;
+    top: calc(50% + 70px); 
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-20deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   .branch2 {
     top: 50%;
-    left: 5%;
-    transform: translate(-50%, -50%) rotate(20deg);
+    left: calc(50% - 70px); 
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .branch3 {
     top: 50%;
-    left: 95%;
-    transform: translate(-50%, -50%) rotate(20deg);
+    left: calc(50% + 70px);
+    transform: translate(-50%, -50%) rotate(45deg);
   }
 
   .branch4 {
-    top: 20%;
+    top: calc(50% - 70px);
     left: 50%;
-    transform: translate(-50%, -50%) rotate(-20deg);
+    transform: translate(-50%, -50%) rotate(-45deg);
   }
 
   .label {
-    font-size: 12px;
-  }
-
-  .branch1 .label,
-  .branch2 .label,
-  .branch3 .label,
-  .branch4 .label {
-    top: 140%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .hoja {
-    width: 30%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
+    font-size: 10px;
+    top: 12
