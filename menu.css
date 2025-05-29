@@ -178,14 +178,14 @@ body {
 
   .branch2 {
     top: 50%;
-    left: 15%;
+    left: 5%;
     transform: translate(-50%, -50%);
   }
 
   .branch3 {
     top: 50%;
-    left: 80%;
-    transform: translate(-50%, -50%) rotate(45deg);
+    left: 30%;
+    transform: translate(-50%, -50%);
   }
 
   .branch4 {
