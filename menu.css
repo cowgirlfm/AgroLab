@@ -154,7 +154,7 @@ body {
   }
 
   .logo {
-    width: 30vw;
+    width: 35vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -163,7 +163,7 @@ body {
   }
 
   .branch {
-    width: 15vw;
+    width: 20vw;
     height: auto;
     position: absolute;
     animation: none;
