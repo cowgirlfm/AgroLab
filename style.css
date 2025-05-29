@@ -1,36 +1,36 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body, html {
-    height: 100%;
-    background-color:#EAF2CE;
-    overflow: hidden;
-  }
-  
-  #introContainer {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color:#EAF2CE;
-    transition: opacity 1.5s ease;
-    opacity: 1;
-    z-index: 9999;
-  }
-  
-  #introContainer.fade-out {
-    opacity: 0;
-  }
-  
-  video {
-    max-width: 100%;
-    height: auto;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  background-color: #EAF2CE;
+  overflow: hidden;
+}
+
+#introContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #EAF2CE;
+  transition: opacity 1.5s ease;
+  opacity: 1;
+  z-index: 9999;
+}
+
+#introContainer.fade-out {
+  opacity: 0;
+}
+
+#introVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
