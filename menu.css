@@ -145,3 +145,83 @@ body {
   top: 50%;
   left: 100%;
 }
+
+@media (max-width: 768px) {
+  .menu-container {
+    width: 100vw;
+    height: 100vh;
+    max-width: none;
+    max-height: none;
+  }
+
+  .logo {
+    width: 60vw;
+    top: 30%;
+  }
+
+  .branch {
+    width: 60px;
+    height: 60px;
+    animation: none;
+  }
+
+  .branch2, .branch3 {
+    width: 90px;
+    height: 90px;
+  }
+
+  .branch1 {
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+
+  .branch2 {
+    top: 75%;
+    left: 20%;
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
+
+  .branch3 {
+    top: 75%;
+    left: 80%;
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
+
+  .branch4 {
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .branch1 .label {
+    top: 140%;
+    left: 50%;
+  }
+
+  .branch2 .label {
+    top: 140%;
+    left: 50%;
+  }
+
+  .branch3 .label {
+    top: 140%;
+    left: 50%;
+  }
+
+  .branch4 .label {
+    top: 140%;
+    left: 50%;
+  }
+
+  .hoja {
+    width: 30%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
