@@ -198,20 +198,52 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  .label {
-    font-size: 10px;
-    top: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    text-align: center;
-    width: 100%;
-  }
-
-  .hoja {
+  .branch1 .hoja {
     width: 30%;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+    
+.branch1 .label {
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .branch2 .hoja {
+    width: 30%;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+  }
+    
+.branch2 .label {
+  top: 45%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+    
+  .branch3 .hoja {
+    width: 30%;
+    top: 55%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+  }
+    
+.branch3 .label {
+  top: 25%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+    
+  .branch4 .hoja {
+    width: 30%;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+    
+.branch4 .label {
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 }
