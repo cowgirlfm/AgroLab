@@ -212,8 +212,8 @@ body {
   transform: translate(-50%, -50%);
 
   .branch2 .hoja {
-    width: 30%;
-    top: 50%;
+    width: 15%;
+    top: 40%;
     left: 45%;
     transform: translate(-50%, -50%);
   }
@@ -225,7 +225,7 @@ body {
   transform: translate(-50%, -50%);
     
   .branch3 .hoja {
-    width: 30%;
+    width: 15%;
     top: 55%;
     left: 55%;
     transform: translate(-50%, -50%);
@@ -238,7 +238,7 @@ body {
   transform: translate(-50%, -50%);
     
   .branch4 .hoja {
-    width: 30%;
+    width: 15%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
