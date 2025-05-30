@@ -201,11 +201,12 @@ body {
   .branch1 .hoja {
     width: 15%;
     top: 90%;
-    left: 55%;
+    left: 70%;
     transform: translate(-50%, -50%);
   }
     
 .branch1 .label {
+  width: 45%;
   top: 105%;
   left: 50%;
   transform: translate(-50%, -50%);
