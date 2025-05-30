@@ -170,6 +170,10 @@ body {
     z-index: 1;
   }
 
+.branch1, .branch4 {
+  width: 12vw;
+}
+    
   .branch1 {
     top: 65%;
     left: 50%;
