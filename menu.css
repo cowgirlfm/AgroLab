@@ -170,10 +170,10 @@ body {
     z-index: 1;
   }
 
-.branch1, .branch4 {
-  width: 12vw;
-}
-    
+  .branch1, .branch4 {
+    width: 12vw;
+  }
+
   .branch1 {
     top: 60%;
     left: 50%;
@@ -204,12 +204,13 @@ body {
     left: 63%;
     transform: translate(-50%, -50%);
   }
-    
-.branch1 .label {
-  font-size: 7px;
-  top: 105%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+  .branch1 .label {
+    font-size: 7px;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
   .branch2 .hoja {
     width: 15%;
@@ -217,37 +218,39 @@ body {
     left: 45%;
     transform: translate(-50%, -50%);
   }
-    
-.branch2 .label {
-  font-size: 6px;
-  top: 45%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-    
+
+  .branch2 .label {
+    font-size: 6px;
+    top: 45%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+  }
+
   .branch3 .hoja {
     width: 15%;
     top: 55%;
     left: 55%;
     transform: translate(-50%, -50%);
   }
-    
-.branch3 .label {
-  font-size: 7px;
-  top: 25%;
-  left: 20%;
-  transform: translate(-50%, -50%);
-    
+
+  .branch3 .label {
+    font-size: 7px;
+    top: 25%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+  }
+
   .branch4 .hoja {
     width: 15%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
-    
-.branch4 .label {
-  font-size: 7px;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+
+  .branch4 .label {
+    font-size: 7px;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
