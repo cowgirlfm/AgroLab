@@ -213,16 +213,16 @@ body {
   }
 
   .branch2 .hoja {
-    width: 15%;
-    top: 60%;
-    left: 30%;
+    width: 10%;
+    top: 70%;
+    left: 50%;
     transform: translate(-50%, -50%);
   }
 
   .branch2 .label {
     font-size: 6px;
-    top: 45%;
-    left: 30%;
+    top: 85%;
+    left: 55%;
     transform: translate(-50%, -50%);
   }
 
