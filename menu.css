@@ -199,7 +199,7 @@ body {
   }
 
   .branch1 .hoja {
-    width: 15%;
+    width: 10%;
     top: 88%;
     left: 63%;
     transform: translate(-50%, -50%);
@@ -220,16 +220,16 @@ body {
   }
 
   .branch2 .label {
-    font-size: 6px;
+    font-size: 7px;
     top: 112%;
     left: 45%;
     transform: translate(-50%, -50%);
   }
 
   .branch3 .hoja {
-    width: 15%;
-    top: 55%;
-    left: 55%;
+    width: 10%;
+    top: 85%;
+    left: 45%;
     transform: translate(-50%, -50%);
   }
 
@@ -241,7 +241,7 @@ body {
   }
 
   .branch4 .hoja {
-    width: 15%;
+    width: 10%;
     top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
