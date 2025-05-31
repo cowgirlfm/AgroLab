@@ -243,14 +243,14 @@ body {
   .branch4 .hoja {
     width: 15%;
     top: 15%;
-    left: 35%;
+    left: 75%;
     transform: translate(-50%, -50%);
   }
 
   .branch4 .label {
     font-size: 7px;
     top: 5%;
-    left: 35%;
+    left: 75%;
     transform: translate(-50%, -50%);
   }
 }
