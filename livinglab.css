@@ -207,3 +207,18 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  #brazo {
+    animation: moverVertical 3s ease-in-out forwards;
+  }
+
+  @keyframes moverVertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(200px);
+    }
+  }
+}
+
