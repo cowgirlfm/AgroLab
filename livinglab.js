@@ -23,11 +23,8 @@ farmbot.addEventListener('click', function () {
   farmbot.classList.add('animar');
   farmbot.style.animationName = isMobile ? 'moverAbajo' : 'moverDerecha';
 
-  setTimeout(() => {
-    farmbot.classList.remove('animar');
-    farmbot.style.animationName = ''; // limpiar animación
-
-    if (!lechugaMostrada) {
+  if (isMobile && !lechugaMostrada) {
+    setTimeout(() => {
       const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
 
       macetaIds.forEach((id) => {
@@ -46,7 +43,13 @@ farmbot.addEventListener('click', function () {
           maceta.appendChild(lechuga);
         }
       });
+
       lechugaMostrada = true;
-    }
+    }, 4000);
+  }
+
+  setTimeout(() => {
+    farmbot.classList.remove('animar');
+    farmbot.style.animationName = '';
   }, 4000);
 });
