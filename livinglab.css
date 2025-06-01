@@ -208,16 +208,31 @@ body {
 }
 
 @media (max-width: 768px) {
-  #brazo {
-    animation: moverVertical 3s ease-in-out forwards;
+  #farmbot.animar {
+    animation: moverAbajo 4s ease-in-out forwards;
   }
 
-  @keyframes moverVertical {
+  @keyframes moverAbajo {
     0% {
       transform: translateY(0);
     }
     100% {
       transform: translateY(200px);
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  #farmbot.animar {
+    animation: moverDerecha 4s ease-in-out forwards;
+  }
+
+  @keyframes moverDerecha {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(200px);
     }
   }
 }
