@@ -1,110 +1,187 @@
 body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: sans-serif;
-  background-color: #f4f4f4;
+margin: 0;
+padding: 0;
+background-color: #735939;
+font-family: "IBM Plex Mono", monospace;
 }
 
-.contenedor-macetas {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.background {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: url('texturapiso.jpg');
+background-size: cover;
+background-position: center;
+opacity: 0.2;
+z-index: -1;
 }
 
-#brazoFarmbot {
-  position: absolute;
-  width: 150px;
-  height: 30px;
-  background-color: #555;
-  border-radius: 15px;
-  transition: transform 0.5s ease;
-  cursor: pointer;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  z-index: 2;
+.container {
+display: flex;
+align-items: center;
+padding: 20px;
+justify-content: center;
 }
 
-@keyframes moverHorizontal {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: calc(100% - 150px);
-  }
+.farmbot {
+width: 50px;
+position: absolute;
+top: 20px;
+left: 370px;
+z-index: 5;
+cursor: pointer;
+transform-origin: center center;
 }
 
-.animarHorizontal {
-  animation: moverHorizontal 2s linear forwards;
-}
-
-@keyframes moverAbajo {
-  0% {
-    top: 0;
-  }
-  100% {
-    top: calc(100% - 30px);
-  }
-}
-
-.animarAbajo {
-  animation: moverAbajo 2s linear forwards;
+.grid {
+display: grid;
+grid-template-columns: repeat(2, 200px);
+grid-template-rows: repeat(2, 150px);
+gap: 30px;
 }
 
 .maceta {
-  width: 100px;
-  height: 100px;
-  background-image: url('maceta.png');
-  background-size: cover;
-  background-position: center;
-  margin: 10px;
-  position: relative;
-  z-index: 1;
+background-image: url('maceta.png');
+background-size: cover;
+width: 200px;
+height: 150px;
+cursor: pointer;
+position: relative;
+transition: transform 0.3s ease;
 }
 
-.lechuga {
-  width: 60px;
-  height: 60px;
-  background-image: url('lechuga.png');
-  background-size: cover;
-  background-position: center;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  display: none;
-  z-index: 3;
+.maceta:hover {
+transform: scale(1.05) rotate(-1deg);
 }
 
-.lechuga.visible {
-  display: block;
+.maceta-titulo {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: #F2E530;
+font-size: 70%;
+text-align: center;
+pointer-events: none;
 }
 
-.contenedor-macetas .macetas {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: end;
-  height: 100%;
+.popup {
+display: none;
+position: fixed;
+top: 10%;
+left: 50%;
+transform: translateX(-50%);
+background: #F2E530;
+border: 2px solid #107329;
+padding: 0;
+z-index: 10;
+box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+width: 90%;
+max-width: 500px;
+border-radius: 8px;
+}
+
+.popup.show {
+display: block;
+}
+
+#maceta-popup .popup-content {
+background-color: #F2E530;
+font-family: "IBM Plex Mono", monospace;
+position: relative;
+padding: 20px;
+max-height: 70vh;
+overflow-y: auto;
+box-sizing: border-box;
+}
+
+#maceta-popup .popup-content::-webkit-scrollbar {
+width: 12px;
+}
+
+#maceta-popup .popup-content::-webkit-scrollbar-track {
+background: #83A660;
+border-radius: 8px;
+}
+
+#maceta-popup .popup-content::-webkit-scrollbar-thumb {
+background-color: #107329;
+border-radius: 8px;
+border: 2px solid #83A660;
+}
+
+.popup .close {
+position: absolute;
+top: 5px;
+right: 10px;
+font-size: 28px;
+font-weight: 800;
+color: #000;
+cursor: pointer;
+z-index: 20;
+}
+
+#maceta-popup-img {
+max-width: 90%;
+height: auto;
+display: block;
+margin: 0 auto 1rem auto;
+border-radius: 8px;
+}
+
+@keyframes moverDerecha {
+0% { transform: translateX(0); }
+50% { transform: translateX(470px); }
+100% { transform: translateX(0); }
+}
+
+@keyframes moverAbajo {
+0% { transform: translateY(0); }
+50% { transform: translateY(300px); }
+100% { transform: translateY(0); }
+}
+
+.farmbot:hover {
+animation: latido 1s infinite;
+}
+
+@keyframes latido {
+0%, 100% {
+transform: scale(1);
+}
+50% {
+transform: scale(1.1);
+}
 }
 
 @media (max-width: 768px) {
-  #brazoFarmbot {
-    width: 150px;
-    height: 30px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-
-  .contenedor-macetas .macetas {
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-  }
+.container {
+flex-direction: column;
+align-items: center;
 }
+
+.grid {
+grid-template-columns: 1fr;
+grid-template-rows: repeat(4, 150px);
+gap: 20px;
+margin-top: 100px;
+}
+
+.farmbot {
+top: 10px;
+left: 50%;
+transform: translateX(-50%) rotate(90deg);
+}
+
+#farmbot.animar {
+animation: moverAbajo 4s ease-in-out forwards;
+}
+}
+
+@media (min-width: 769px) {
+#farmbot.animar {
+animation: moverDerecha 4s ease-in-out forwards;
+}
+} 
