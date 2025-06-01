@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link rel="icon" href="logo.png"/>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet"/>
   <title>AgroLab</title>
-  <link rel="stylesheet" href="livinglab.css">
+  <link rel="stylesheet" href="livinglab.css"/>
 </head>
 
 <body>
@@ -15,20 +15,21 @@
   </a>
 
   <div class="background"></div>
+
   <div class="container">
-    <img src="farmbot.png" alt="Farmbot" class="farmbot" id="farmbot">
+    <img src="farmbot.png" alt="Farmbot" class="farmbot" id="farmbot" />
 
     <div class="grid">
       <div class="maceta" id="maceta1" onclick="openMacetaPopup('Laboratorio interdisciplinario para el diseño y la innovación en agricultura urbana y alimentos.', 'que-es.jpg')">
         <span class="maceta-titulo">¿Qué es el AgroLab?</span>
       </div>
-      <div class="maceta" id="maceta2" onclick="openMacetaPopup('La misión del AgroLab Uniandes es proveer un espacio abierto de experiencias para el diálogo, la co-creación y experimentación vegetal en la que se articulen conocimientos disciplinares y tradicionales, para la investigación, aprendizajes y sensibilización sobre la producción, uso e interacción con los alimentos.', 'mision.jpg')">
+      <div class="maceta" id="maceta2" onclick="openMacetaPopup('La misión del AgroLab Uniandes es proveer un espacio abierto de experiencias para el diálogo, la co-creación y experimentación vegetal...', 'mision.jpg')">
         <span class="maceta-titulo">¿Cuál es nuestra misión?</span>
       </div>
       <div class="maceta" id="maceta3" onclick="openMacetaPopup('Camas de siembra – Siembra vertical – Lombricomposta – Hidropónicos – Acuapónicos - Farmbot', 'sistemas-productivos.png')">
         <span class="maceta-titulo">¿Qué sistemas productivos tenemos?</span>
       </div>
-      <div class="maceta" id="maceta4" onclick="openMacetaPopup('Buscamos un impacto regional mediante el desarrollo de recomendaciones técnicas y tecnológicas, y modelos de escalabilidad a partir de prototipos a pequeña escala. Ser un espacio de contacto con comunidades a través de conversaciones, cursos, prácticas y talleres sobre patrimonios y seguridad alimentaria y el bienestar de todas las personas que participan en su proceso de innovación desde múltiples perspectivas como la tecnología, el conocimiento y la experiencia.', 'comunidad.jpg')">
+      <div class="maceta" id="maceta4" onclick="openMacetaPopup('Buscamos un impacto regional mediante el desarrollo de recomendaciones técnicas y tecnológicas...', 'comunidad.jpg')">
         <span class="maceta-titulo">¿Qué buscamos?</span>
       </div>
     </div>
@@ -37,7 +38,7 @@
   <div class="popup" id="maceta-popup">
     <div class="popup-content">
       <span class="close" onclick="closeMacetaPopup()">&times;</span>
-      <img id="maceta-popup-img" src="" alt="Detalle de la maceta" style="width: 100%; border-radius: 8px; margin-bottom: 1rem;">
+      <img id="maceta-popup-img" src="" alt="Detalle de la maceta" />
       <p id="maceta-popup-text"></p>
     </div>
   </div>
