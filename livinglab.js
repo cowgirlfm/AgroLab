@@ -1,13 +1,35 @@
-function iniciarAnimacionFarmbot() {
+function openMacetaPopup(text, imageSrc) {
+  const popup = document.getElementById('maceta-popup');
+  document.getElementById('maceta-popup-text').innerText = text;
+  document.getElementById('maceta-popup-img').src = imageSrc;
+  popup.classList.add('show');
+}
+
+function closeMacetaPopup() {
+  const popup = document.getElementById('maceta-popup');
+  popup.classList.remove('show');
+}
+
+window.openMacetaPopup = openMacetaPopup;
+window.closeMacetaPopup = closeMacetaPopup;
+
+const farmbot = document.getElementById('farmbot');
+let lechugaMostrada = false;
+
+farmbot.addEventListener('click', function () {
   if (farmbot.classList.contains('animar')) return;
 
   const isMobile = window.innerWidth <= 768;
   farmbot.classList.add('animar');
   farmbot.style.animationName = isMobile ? 'moverAbajo' : 'moverDerecha';
 
-  if (isMobile && !lechugaMostrada) {
-    setTimeout(() => {
+  setTimeout(() => {
+    farmbot.classList.remove('animar');
+    farmbot.style.animationName = ''; // limpiar animación
+
+    if (!lechugaMostrada) {
       const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
+
       macetaIds.forEach((id) => {
         const maceta = document.getElementById(id);
         if (maceta) {
@@ -20,18 +42,11 @@ function iniciarAnimacionFarmbot() {
           lechuga.style.left = '50%';
           lechuga.style.transform = 'translateX(-50%)';
           lechuga.style.pointerEvents = 'none';
+
           maceta.appendChild(lechuga);
         }
       });
       lechugaMostrada = true;
-    }, 4000);
-  }
-
-  setTimeout(() => {
-    farmbot.classList.remove('animar');
-    farmbot.style.animationName = '';
+    }
   }, 4000);
-}
-
-farmbot.addEventListener('click', iniciarAnimacionFarmbot);
-farmbot.addEventListener('touchstart', iniciarAnimacionFarmbot);
+});
