@@ -21,8 +21,9 @@ body {
 .container {
   display: flex;
   align-items: center;
-  padding: 20px;
   justify-content: center;
+  padding: 20px;
+  flex-direction: column;
 }
 
 .farmbot {
@@ -33,6 +34,16 @@ body {
   z-index: 5;
   cursor: pointer;
   transform-origin: center center;
+  transition: transform 0.3s ease;
+}
+
+.farmbot:hover {
+  animation: latido 1s infinite;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
 }
 
 .grid {
@@ -77,17 +88,17 @@ body {
   border: 2px solid #107329;
   padding: 0;
   z-index: 10;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   width: 90%;
   max-width: 500px;
   border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 .popup.show {
   display: block;
 }
 
-#maceta-popup .popup-content {
+.popup-content {
   background-color: #F2E530;
   font-family: "IBM Plex Mono", monospace;
   position: relative;
@@ -97,22 +108,28 @@ body {
   box-sizing: border-box;
 }
 
-#maceta-popup .popup-content::-webkit-scrollbar {
+.popup-content img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.popup-content::-webkit-scrollbar {
   width: 12px;
 }
 
-#maceta-popup .popup-content::-webkit-scrollbar-track {
+.popup-content::-webkit-scrollbar-track {
   background: #83A660;
   border-radius: 8px;
 }
 
-#maceta-popup .popup-content::-webkit-scrollbar-thumb {
+.popup-content::-webkit-scrollbar-thumb {
   background-color: #107329;
   border-radius: 8px;
   border: 2px solid #83A660;
 }
 
-.popup .close {
+.close {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -120,17 +137,7 @@ body {
   font-weight: 800;
   color: #000;
   cursor: pointer;
-  z-index: 20;
 }
-
-#maceta-popup-img {
-  max-width: 90%;
-  height: auto;
-  display: block;
-  margin: 0 auto 1rem auto;
-  border-radius: 8px;
-}
-
 
 @keyframes moverDerecha {
   0% { transform: translateX(0); }
@@ -144,25 +151,7 @@ body {
   100% { transform: translateY(0); }
 }
 
-.farmbot:hover {
-  animation: latido 1s infinite;
-}
-
-@keyframes latido {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
 @media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .grid {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 150px);
@@ -177,12 +166,12 @@ body {
   }
 
   #farmbot.animar {
-    animation: moverAbajo 4s ease-in-out forwards;
+    animation: moverAbajo 4s ease-in-out;
   }
 }
 
 @media (min-width: 769px) {
   #farmbot.animar {
-    animation: moverDerecha 4s ease-in-out forwards;
+    animation: moverDerecha 4s ease-in-out;
   }
 }
