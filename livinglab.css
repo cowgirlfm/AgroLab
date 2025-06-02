@@ -193,8 +193,8 @@ body {
   }
 
   .farmbot {
-    top: 10px;
-    left: 50%;
+    top: 0px;
+    left: 43%;
     transform: rotate(90deg);
   }
 
