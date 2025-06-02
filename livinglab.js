@@ -6,8 +6,7 @@ function openMacetaPopup(text, imageSrc) {
 }
 
 function closeMacetaPopup() {
-  const popup = document.getElementById('maceta-popup');
-  popup.classList.remove('show');
+  document.getElementById('maceta-popup').classList.remove('show');
 }
 
 window.openMacetaPopup = openMacetaPopup;
@@ -22,10 +21,9 @@ farmbot.addEventListener('click', () => {
   const isMobile = window.innerWidth <= 768;
 
   if (isMobile) {
-
     farmbot.classList.add('animar');
     let start = null;
-    let duration = 4000; 
+    let duration = 4000;
     let maxY = 300;
 
     function animateDown(timestamp) {
@@ -36,12 +34,12 @@ farmbot.addEventListener('click', () => {
       let offset = progress <= 1 ? progress : 2 - progress;
       let translateY = offset * maxY;
 
-      farmbot.style.transform = `rotate(90deg) translateY(${translateY}px)`;
+      farmbot.style.transform = `translateX(-50%) rotate(90deg) translateY(${translateY}px)`;
 
       if (elapsed < duration) {
         requestAnimationFrame(animateDown);
       } else {
-        farmbot.style.transform = 'rotate(90deg)';
+        farmbot.style.transform = 'translateX(-50%) rotate(90deg)';
         farmbot.classList.remove('animar');
 
         if (!lechugaMostrada) {
@@ -51,9 +49,7 @@ farmbot.addEventListener('click', () => {
     }
 
     requestAnimationFrame(animateDown);
-
   } else {
-   
     farmbot.classList.add('animar');
     farmbot.style.animationName = 'moverDerecha';
 
@@ -69,23 +65,21 @@ farmbot.addEventListener('click', () => {
 });
 
 function mostrarLechugas() {
-  const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
+  const macetas = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
 
-  macetaIds.forEach((id) => {
+  macetas.forEach(id => {
     const maceta = document.getElementById(id);
-    if (maceta) {
-      const lechuga = document.createElement('img');
-      lechuga.src = 'grupo-lechuga.png';
-      lechuga.alt = 'Grupo de lechugas';
-      lechuga.style.position = 'absolute';
-      lechuga.style.width = '170px';
-      lechuga.style.top = '7px';
-      lechuga.style.left = '50%';
-      lechuga.style.transform = 'translateX(-50%)';
-      lechuga.style.pointerEvents = 'none';
+    const lechuga = document.createElement('img');
+    lechuga.src = 'grupo-lechuga.png';
+    lechuga.alt = 'Grupo de lechugas';
+    lechuga.style.position = 'absolute';
+    lechuga.style.width = '170px';
+    lechuga.style.top = '7px';
+    lechuga.style.left = '50%';
+    lechuga.style.transform = 'translateX(-50%)';
+    lechuga.style.pointerEvents = 'none';
 
-      maceta.appendChild(lechuga);
-    }
+    maceta.appendChild(lechuga);
   });
 
   lechugaMostrada = true;
