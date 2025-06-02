@@ -1,86 +1,184 @@
-function openMacetaPopup(text, imageSrc) {
-  const popup = document.getElementById('maceta-popup');
-  document.getElementById('maceta-popup-text').innerText = text;
-  document.getElementById('maceta-popup-img').src = imageSrc;
-  popup.classList.add('show');
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #735939;
+  font-family: "IBM Plex Mono", monospace;
+  overflow-x: hidden;
 }
 
-function closeMacetaPopup() {
-  document.getElementById('maceta-popup').classList.remove('show');
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('texturapiso.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
 }
 
-window.openMacetaPopup = openMacetaPopup;
-window.closeMacetaPopup = closeMacetaPopup;
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
 
-const farmbot = document.getElementById('farmbot');
-let lechugaMostrada = false;
+.farmbot {
+  width: 50px;
+  position: absolute;
+  top: 20px;
+  left: 370px;
+  z-index: 5;
+  cursor: pointer;
+}
 
-farmbot.addEventListener('click', () => {
-  if (farmbot.classList.contains('animar')) return;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  grid-template-rows: repeat(2, 150px);
+  gap: 30px;
+  margin-top: 80px;
+}
 
-  const isMobile = window.innerWidth <= 768;
+.maceta {
+  background-image: url('maceta.png');
+  background-size: cover;
+  width: 200px;
+  height: 150px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
 
-  if (isMobile) {
-    farmbot.classList.add('animar');
-    let start = null;
-    let duration = 4000;
-    let maxY = 300;
+.maceta:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
 
-    function animateDown(timestamp) {
-      if (!start) start = timestamp;
-      let elapsed = timestamp - start;
+.maceta-titulo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #F2E530;
+  font-size: 70%;
+  text-align: center;
+  pointer-events: none;
+}
 
-      let progress = (elapsed % duration) / (duration / 2);
-      let offset = progress <= 1 ? progress : 2 - progress;
-      let translateY = offset * maxY;
+.popup {
+  display: none;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #F2E530;
+  border: 2px solid #107329;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 500px;
+  border-radius: 8px;
+}
 
-      farmbot.style.transform = `translateX(-50%) rotate(90deg) translateY(${translateY}px)`;
+.popup.show {
+  display: block;
+}
 
-      if (elapsed < duration) {
-        requestAnimationFrame(animateDown);
-      } else {
-        farmbot.style.transform = 'translateX(-50%) rotate(90deg)';
-        farmbot.classList.remove('animar');
+.popup-content {
+  background-color: #F2E530;
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+  position: relative;
+}
 
-        if (!lechugaMostrada) {
-          mostrarLechugas();
-        }
-      }
-    }
+.popup-content::-webkit-scrollbar {
+  width: 12px;
+}
 
-    requestAnimationFrame(animateDown);
-  } else {
-    farmbot.classList.add('animar');
-    farmbot.style.animationName = 'moverDerecha';
+.popup-content::-webkit-scrollbar-track {
+  background: #83A660;
+  border-radius: 8px;
+}
 
-    setTimeout(() => {
-      farmbot.classList.remove('animar');
-      farmbot.style.animationName = '';
+.popup-content::-webkit-scrollbar-thumb {
+  background-color: #107329;
+  border-radius: 8px;
+  border: 2px solid #83A660;
+}
 
-      if (!lechugaMostrada) {
-        mostrarLechugas();
-      }
-    }, 4000);
+.popup .close {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #000;
+  cursor: pointer;
+  z-index: 20;
+}
+
+#maceta-popup-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+@keyframes moverDerecha {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(470px); }
+  100% { transform: translateX(0); }
+}
+
+#farmbot.animar {
+  animation: moverDerecha 4s ease-in-out;
+}
+
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.farmbot:hover {
+  animation: latido 1s infinite;
+}
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+}
+
+.back-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover img {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 150px);
+    gap: 20px;
+    margin-top: 120px;
   }
-});
 
-function mostrarLechugas() {
-  const macetas = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
-
-  macetas.forEach(id => {
-    const maceta = document.getElementById(id);
-    const lechuga = document.createElement('img');
-    lechuga.src = 'grupo-lechuga.png';
-    lechuga.alt = 'Grupo de lechugas';
-    lechuga.style.position = 'absolute';
-    lechuga.style.width = '170px';
-    lechuga.style.top = '7px';
-    lechuga.style.left = '50%';
-    lechuga.style.transform = 'translateX(-50%)';
-    lechuga.style.pointerEvents = 'none';
-
-    maceta.appendChild(lechuga);
-  });
-
-  lechugaMostrada = true;
+  .farmbot {
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
 }
