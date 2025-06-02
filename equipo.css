@@ -136,7 +136,7 @@ body {
     width: 80px;
   }
 
-  .lombriz:nth-child(2) { top: 70%; left: 10%; }
+  .lombriz:nth-child(2) { top: 30%; left: 5%; }
   .lombriz:nth-child(3) { top: 32%; left: 60%; }
   .lombriz:nth-child(4) { top: 45%; left: 25%; }
   .lombriz:nth-child(5) { top: 58%; left: 60%; }
