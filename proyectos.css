@@ -127,3 +127,32 @@ html, body {
 .back-button:hover img {
   transform: scale(1.1);
 }
+
+@media (max-width: 768px) {
+  .interface {
+    background-image: url("proyectos-celular.png");
+    background-size: cover;
+    background-position: center;
+  }
+
+  .titulo {
+    font-size: 4vw;
+    padding: 1vw 2vw;
+  }
+
+  #terminados {
+    top: 10%;
+    left: 20%;
+    transform: rotate(0deg);
+  }
+
+  #en-proceso {
+    top: 35%;
+    left: 20%;
+  }
+
+  .popup-content {
+    font-size: 4vw;
+  }
+}
+
