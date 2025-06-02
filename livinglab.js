@@ -16,39 +16,77 @@ window.closeMacetaPopup = closeMacetaPopup;
 const farmbot = document.getElementById('farmbot');
 let lechugaMostrada = false;
 
-farmbot.addEventListener('click', function () {
+farmbot.addEventListener('click', () => {
   if (farmbot.classList.contains('animar')) return;
 
-  farmbot.classList.remove('animar');
-  void farmbot.offsetWidth;
-
   const isMobile = window.innerWidth <= 768;
-  farmbot.style.animationName = '';
-  farmbot.classList.add('animar');
 
-  setTimeout(() => {
-    farmbot.classList.remove('animar');
+  if (isMobile) {
 
-    if (!lechugaMostrada) {
-      const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
+    farmbot.classList.add('animar');
+    let start = null;
+    let duration = 4000; 
+    let maxY = 300;
 
-      macetaIds.forEach((id) => {
-        const maceta = document.getElementById(id);
-        if (maceta) {
-          const lechuga = document.createElement('img');
-          lechuga.src = 'grupo-lechuga.png';
-          lechuga.alt = 'Grupo de lechugas';
-          lechuga.style.position = 'absolute';
-          lechuga.style.width = '170px';
-          lechuga.style.top = '7px';
-          lechuga.style.left = '50%';
-          lechuga.style.transform = 'translateX(-50%)';
-          lechuga.style.pointerEvents = 'none';
+    function animateDown(timestamp) {
+      if (!start) start = timestamp;
+      let elapsed = timestamp - start;
 
-          maceta.appendChild(lechuga);
+      let progress = (elapsed % duration) / (duration / 2);
+      let offset = progress <= 1 ? progress : 2 - progress;
+      let translateY = offset * maxY;
+
+      farmbot.style.transform = `rotate(90deg) translateY(${translateY}px)`;
+
+      if (elapsed < duration) {
+        requestAnimationFrame(animateDown);
+      } else {
+        farmbot.style.transform = 'rotate(90deg)';
+        farmbot.classList.remove('animar');
+
+        if (!lechugaMostrada) {
+          mostrarLechugas();
         }
-      });
-      lechugaMostrada = true;
+      }
     }
-  }, 4000);
+
+    requestAnimationFrame(animateDown);
+
+  } else {
+   
+    farmbot.classList.add('animar');
+    farmbot.style.animationName = 'moverDerecha';
+
+    setTimeout(() => {
+      farmbot.classList.remove('animar');
+      farmbot.style.animationName = '';
+
+      if (!lechugaMostrada) {
+        mostrarLechugas();
+      }
+    }, 4000);
+  }
 });
+
+function mostrarLechugas() {
+  const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
+
+  macetaIds.forEach((id) => {
+    const maceta = document.getElementById(id);
+    if (maceta) {
+      const lechuga = document.createElement('img');
+      lechuga.src = 'grupo-lechuga.png';
+      lechuga.alt = 'Grupo de lechugas';
+      lechuga.style.position = 'absolute';
+      lechuga.style.width = '170px';
+      lechuga.style.top = '7px';
+      lechuga.style.left = '50%';
+      lechuga.style.transform = 'translateX(-50%)';
+      lechuga.style.pointerEvents = 'none';
+
+      maceta.appendChild(lechuga);
+    }
+  });
+
+  lechugaMostrada = true;
+}
