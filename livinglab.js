@@ -19,13 +19,15 @@ let lechugaMostrada = false;
 farmbot.addEventListener('click', function () {
   if (farmbot.classList.contains('animar')) return;
 
+  farmbot.classList.remove('animar');
+  void farmbot.offsetWidth;
+
   const isMobile = window.innerWidth <= 768;
+  farmbot.style.animationName = '';
   farmbot.classList.add('animar');
-  farmbot.style.animationName = isMobile ? 'moverAbajo' : 'moverDerecha';
 
   setTimeout(() => {
     farmbot.classList.remove('animar');
-    farmbot.style.animationName = '';
 
     if (!lechugaMostrada) {
       const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
