@@ -197,14 +197,4 @@ body {
     left: 43%;
     transform: rotate(90deg);
   }
-
-#farmbot.animar {
-  animation: moverAbajo 4s ease-in-out;
-}
-  
-  @keyframes moverAbajo {
-    0% { transform: rotate(90deg) translateY(0); }
-    50% { transform: rotate(90deg) translateY(300px); }
-    100% { transform: rotate(90deg) translateY(0); }
-  }
 }
