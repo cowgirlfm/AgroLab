@@ -195,7 +195,7 @@ body {
   .farmbot {
     top: 10px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: rotate(90deg);
     animation: moverAbajo 4s ease-in-out;
   }
 
