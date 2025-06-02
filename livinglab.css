@@ -200,8 +200,8 @@ body {
   }
 
   @keyframes moverAbajo {
-    0% { transform: translateX(-50%) translateY(0); }
-    50% { transform: translateX(-50%) translateY(300px); }
-    100% { transform: translateX(-50%) translateY(0); }
+    0% { transform: rotate(90deg) translateY(0); }
+    50% { transform: rotate(90deg) translateY(300px); }
+    100% { transform: rotate(90deg) translateY(0); }
   }
 }
