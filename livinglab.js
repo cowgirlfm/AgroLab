@@ -6,7 +6,8 @@ function openMacetaPopup(text, imageSrc) {
 }
 
 function closeMacetaPopup() {
-  document.getElementById('maceta-popup').classList.remove('show');
+  const popup = document.getElementById('maceta-popup');
+  popup.classList.remove('show');
 }
 
 window.openMacetaPopup = openMacetaPopup;
@@ -22,24 +23,41 @@ farmbot.addEventListener('click', () => {
 
   if (isMobile) {
     farmbot.classList.add('animar');
+
     let start = null;
-    let duration = 4000;
-    let maxY = 300;
+    const duration = 2000; 
+    const regreso = 2000; 
+    const maxY = 300;
 
-    function animateDown(timestamp) {
+    function bajar(timestamp) {
       if (!start) start = timestamp;
-      let elapsed = timestamp - start;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const translateY = progress * maxY;
 
-      let progress = (elapsed % duration) / (duration / 2);
-      let offset = progress <= 1 ? progress : 2 - progress;
-      let translateY = offset * maxY;
+      farmbot.style.transform = `rotate(90deg) translateY(${translateY}px)`;
 
-      farmbot.style.transform = `translateX(-50%) rotate(90deg) translateY(${translateY}px)`;
-
-      if (elapsed < duration) {
-        requestAnimationFrame(animateDown);
+      if (progress < 1) {
+        requestAnimationFrame(bajar);
       } else {
-        farmbot.style.transform = 'translateX(-50%) rotate(90deg)';
+      
+        start = null;
+        requestAnimationFrame(subir);
+      }
+    }
+
+    function subir(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / regreso, 1);
+      const translateY = maxY - progress * maxY;
+
+      farmbot.style.transform = `rotate(90deg) translateY(${translateY}px)`;
+
+      if (progress < 1) {
+        requestAnimationFrame(subir);
+      } else {
+        farmbot.style.transform = 'rotate(90deg)';
         farmbot.classList.remove('animar');
 
         if (!lechugaMostrada) {
@@ -48,8 +66,10 @@ farmbot.addEventListener('click', () => {
       }
     }
 
-    requestAnimationFrame(animateDown);
+    requestAnimationFrame(bajar);
+
   } else {
+    // Computador
     farmbot.classList.add('animar');
     farmbot.style.animationName = 'moverDerecha';
 
@@ -65,21 +85,23 @@ farmbot.addEventListener('click', () => {
 });
 
 function mostrarLechugas() {
-  const macetas = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
+  const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
 
-  macetas.forEach(id => {
+  macetaIds.forEach((id) => {
     const maceta = document.getElementById(id);
-    const lechuga = document.createElement('img');
-    lechuga.src = 'grupo-lechuga.png';
-    lechuga.alt = 'Grupo de lechugas';
-    lechuga.style.position = 'absolute';
-    lechuga.style.width = '170px';
-    lechuga.style.top = '7px';
-    lechuga.style.left = '50%';
-    lechuga.style.transform = 'translateX(-50%)';
-    lechuga.style.pointerEvents = 'none';
+    if (maceta) {
+      const lechuga = document.createElement('img');
+      lechuga.src = 'grupo-lechuga.png';
+      lechuga.alt = 'Grupo de lechugas';
+      lechuga.style.position = 'absolute';
+      lechuga.style.width = '170px';
+      lechuga.style.top = '7px';
+      lechuga.style.left = '50%';
+      lechuga.style.transform = 'translateX(-50%)';
+      lechuga.style.pointerEvents = 'none';
 
-    maceta.appendChild(lechuga);
+      maceta.appendChild(lechuga);
+    }
   });
 
   lechugaMostrada = true;
