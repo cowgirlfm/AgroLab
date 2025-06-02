@@ -25,7 +25,7 @@ farmbot.addEventListener('click', function () {
 
   setTimeout(() => {
     farmbot.classList.remove('animar');
-    farmbot.style.animationName = ''; // limpiar animación
+    farmbot.style.animationName = '';
 
     if (!lechugaMostrada) {
       const macetaIds = ['maceta1', 'maceta2', 'maceta3', 'maceta4'];
