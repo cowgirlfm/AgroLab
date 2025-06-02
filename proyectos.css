@@ -141,14 +141,14 @@ html, body {
   }
 
   #terminados {
-    top: 10%;
-    left: 20%;
+    top: 25%;
+    left: 40%;
     transform: rotate(0deg);
   }
 
   #en-proceso {
-    top: 35%;
-    left: 20%;
+    top: 45%;
+    left: 5%;
   }
 
   .popup-content {
