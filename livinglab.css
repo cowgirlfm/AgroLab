@@ -193,8 +193,8 @@ body {
   }
 
   .farmbot {
-    top: 10px;
-    left: 50%;
+    top: 5px;
+    left: 40%;
     transform: rotate(90deg);
     animation: moverAbajo 4s ease-in-out;
   }
